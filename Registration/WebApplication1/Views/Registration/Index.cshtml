@@ -1,0 +1,19 @@
+﻿@model IEnumerable<WebApplication1.Models.user>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@if (Request.IsAuthenticated)
+{
+
+    <span>Welcome @Html.Encode(User.Identity.Name) </span>
+}
+else
+{
+
+    @Html.ActionLink("Login", "Login", "Registration")
+    <br />
+
+    @Html.ActionLink("Register", "Register", "Registration")
+}
